@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+/* Colors */
+body, .read_more_button {
+    background-color: #ECE7E1;
+}
+
+#login_logout_button, #new_article_button, .read_more_button {
+    color: #333333;
+}
+
+header, footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#div_container {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+#header_navigation_bar, #footer_bar, #login_logout_button, #new_article_button {
+    background-color: #606060;
+}
+
+/* Fonts */
+body, #login_logout_button, #new_article_button, .read_more_button {
+    font-family: "Segoe Print", sans-serif;
+}
+
+#login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Width */
+body, header, #header_navigation_bar ul, nav, #div_body{
+    width: 100%;
+}
+
+#header_navigation_bar, #div_container, #footer_bar {
+    width: 80%;
+}
+
+/* Height */
+header div {
+    height: 50%;
+}
+
+#div_container {
+    height: 100%;
+}
+
+/* Flex */
+header, header div, #header_navigation_bar ul, #div_body, footer {
+    display: flex;
+}
+
+header, header div{
+    align-items: center;
+}
+
+#header_navigation_bar ul, #div_body, footer {
+    justify-content: center;
+}
+
+#header_navigation_bar ul {
+    justify-content: space-evenly;
+}
+
+/* Others */
+header {
+    position: fixed;
+    flex-direction: column;
+    height: 8rem;
+}
+
+#header_navigation_bar ul li {
+    list-style: none;
+}
+
+#div_container {
+    padding: 10rem 8rem 0 8rem;
+}
+
+#login_logout_button, #new_article_button {
+    padding: 0.2rem 3rem;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+    border: none;
+    border-radius: 50px;
+ }
+
+#login_logout_button {
+    right: 2%;
+}
+
+#new_article_button {
+    left: 2%;
+}
+
+.read_more_button {
+    border: solid #333333 1px;
+    padding: 0.1rem 0.5rem;
+}
+
+footer {
+    height: 6rem;
+}
+
+#footer_bar {
+    height: 4rem;
+}
+
+/* Hover */
+#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover {
+    background-color: #606060;
+    border: solid #ffffff 1px;
+    color: #ffffff;
+}
+
+#header_navigation_bar ul li:hover {
+    font-weight: bold;
+}
+
+#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, #header_navigation_bar ul li:hover {
+    cursor: pointer;
+}
