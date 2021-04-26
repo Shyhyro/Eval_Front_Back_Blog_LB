@@ -16,14 +16,14 @@
     <div id="header_navigation_bar">
         <nav>
             <ul>
-                <li>Blog</li>
+                <li onclick="document.location.href='index.php'">Blog</li>
                 <li>A propos</li>
                 <li>Contact</li>
             </ul>
         </nav>
     </div>
-    <button id="new_article_button">New article</button>
-    <button id="login_logout_button">Log In</button>
+    <button id="new_article_button">Nouvel article</button>
+    <button id="login_logout_button">Connexion</button>
 </header>
 
 <div id="div_body">

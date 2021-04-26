@@ -13,12 +13,10 @@
                         Ab consectetur, consequatur debitis dolorum eos facere hic in molestiae quasi recusandae repellendus, rerum unde ut.
                     </div>
                     <div class="blog_post_button">
-                        <button class="read_more_button">Read more</button>
+                        <button class="read_more_button" onclick="document.location.href='blog_post.php'">Voir article</button>
                     </div>
                 </div>
             </div>
-
-
 
 <?php
     include "../View/Elements/footer.php";

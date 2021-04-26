@@ -17,17 +17,22 @@
                         Ab consectetur, consequatur debitis dolorum eos facere hic in molestiae quasi recusandae repellendus, rerum unde ut.
                     </div>
                     <div class="blog_post_button">
-                        <button class="read_more_button">Read more</button>
+                        <form method="post" name="add_commentary">
+                            <input type="text">
+                            <button type="submit" class="send_commentary_button">Envoyer</button>
+                        </form>
                     </div>
                 </div>
                 <div class="commentary_div">
-                    <div>
-                        <form method="post" name="add_commentary">
-                            <input type="text">
-                            <button type="submit">Envoyer</button>
-                        </form>
+                    <div class="commentary">
+                        <div>Username / <span>01.01.2021, 00:00</span></div>
+                        <div class="commentary_content">This is a message.</div>
                     </div>
-                    <div>
+                    <div class="commentary">
+                        <div>Username / <span>01.01.2021, 00:00</span></div>
+                        <div class="commentary_content">This is a message.</div>
+                    </div>
+                    <div class="commentary">
                         <div>Username / <span>01.01.2021, 00:00</span></div>
                         <div class="commentary_content">This is a message.</div>
                     </div>
