@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mon petit Blog simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../View/Styles/communs.css">
 </head>
@@ -22,8 +22,17 @@
             </ul>
         </nav>
     </div>
-    <button id="new_article_button">Nouvel article</button>
-    <button id="login_logout_button">Connexion</button>
+    <?php
+        if (isset($_SESSION['id'], $_SESSION['username'])){
+            echo "<button id='new_article_button'>Nouvel article</button>";
+            echo "<button id='login_logout_button' onclick='document.location.href=". '"../logout.php"' . "'>Déconnexion</button>";
+
+        } else {
+            echo "<button id='login_logout_button' onclick='document.location.href=". '"log.php"' . "'>Connexion</button>";
+        }
+
+
+    ?>
 </header>
 
 <div id="div_body">

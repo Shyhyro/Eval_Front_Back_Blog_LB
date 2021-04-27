@@ -1,5 +1,16 @@
 <?php
+    require_once "../require.php";
+
     include "../View/Elements/header.php";
+
+    if (isset($_GET['post'])) {
+        if ($_GET['post'] === 'off') {
+            echo "<div id='error_problem' class='red'>Vous êtes maintenant Hors ligne!</div>";
+        } else if ($_GET['post'] === 'on') {
+            echo "<div id='error_problem' class='green'>Vous êtes maintenant en ligne!</div>";
+        }
+    }
+
 ?>
     <link rel="stylesheet" href="../View/Styles/all_blog_post.css">
 

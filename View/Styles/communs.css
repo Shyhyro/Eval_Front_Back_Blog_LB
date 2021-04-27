@@ -31,24 +31,12 @@ header, footer {
     background-color: #606060;
 }
 
-.green {
-    color: green;
-}
-
-.orange {
-    color: orange;
-}
-
-.red {
-    color: red;
-}
-
 /* Fonts */
-body, #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button {
+body, #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button, #log_form_user input, #log_form button {
     font-family: "Segoe Print", sans-serif;
 }
 
-#login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button, .send_commentary_button {
+#login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button, .send_commentary_button, #log_form, #log_form button {
     font-size: 1rem;
 }
 
@@ -57,7 +45,7 @@ h1 {
 }
 
 /* Width */
-body, header, #header_navigation_bar ul, nav, #div_body{
+body, header, #header_navigation_bar ul, nav, #div_body, #log_form, #log_form_user {
     width: 100%;
 }
 
@@ -75,11 +63,11 @@ header div {
 }
 
 /* Flex */
-header, header div, #header_navigation_bar ul, #div_body, footer, #footer_bar {
+header, header div, #header_navigation_bar ul, #div_body, footer, #footer_bar, #log_form, #log_form_user {
     display: flex;
 }
 
-header, header div{
+header, header div {
     align-items: center;
 }
 
@@ -91,10 +79,13 @@ header, header div{
     justify-content: space-evenly;
 }
 
+header, #log_form, #log_form_user {
+    flex-direction: column;
+}
+
 /* Others */
 header {
     position: fixed;
-    flex-direction: column;
     height: 8rem;
 }
 
@@ -123,7 +114,7 @@ header {
     left: 2%;
 }
 
-.read_more_button, .send_commentary_button {
+.read_more_button, .send_commentary_button, #log_form button {
     border: solid #333333 1px;
     padding: 0.1rem 0.5rem;
 }
@@ -138,8 +129,24 @@ footer {
     height: 4rem;
 }
 
+#log_form_user input {
+    padding: 0.5rem 0.8rem;
+}
+
+#log_form_user, #log_form button {
+    margin-bottom: 1rem;
+}
+
+#log_form {
+    padding-bottom: 3rem;
+}
+
+#log_form button, #log_form_user input {
+    width: 14rem;
+}
+
 /* Hover */
-#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, .send_commentary_button:hover {
+#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, .send_commentary_button:hover, #log_form button:hover {
     background-color: #606060;
     border: solid #ffffff 1px;
     color: #ffffff;
@@ -149,6 +156,28 @@ footer {
     font-weight: bold;
 }
 
-#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, #header_navigation_bar ul li:hover, .send_commentary_button:hover {
+#login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, #header_navigation_bar ul li:hover, .send_commentary_button:hover, #log_form button:hover {
     cursor: pointer;
+}
+
+/* ERROR */
+#error_problem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    top: 0;
+    position: absolute;
+    height: 4rem;
+    text-align: center;
+}
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
 }
