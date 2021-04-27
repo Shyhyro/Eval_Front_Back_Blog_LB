@@ -1,9 +1,10 @@
 <?php
+    require_once "../require.php";
+
     include "../View/Elements/header.php";
 ?>
-    <link rel="stylesheet" href="../View/Styles/one_blog_post.css">
 
-            <div class="blog_post">
+            <div class="one_blog_post">
                 <div class="one_blog_image_tittle">
                     <div class="one_blog_image"><img src="https://loremflickr.com/1080/1080/nature" /></div>
                     <div class="one_blog_post_info">

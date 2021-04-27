@@ -10,7 +10,7 @@ body {
 
 /* Colors */
 body, .read_more_button, .send_commentary_button {
-    background-color: #ECE7E1;
+    background-color: #889aba;
 }
 
 #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button {
@@ -38,8 +38,12 @@ body, #login_logout_button, #new_article_button, .read_more_button, .send_commen
 }
 
 #login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button, .send_commentary_button,
-#log_form, #log_form button, .blog_post_info {
+#log_form, #log_form button, .blog_post_info, .one_blog_post_content {
     font-size: 1rem;
+}
+
+.one_blog_post_info, #error_problem{
+    font-size: 1.5rem;
 }
 
 h1 {
@@ -49,15 +53,20 @@ h1 {
 /* Width */
 body, header, #header_navigation_bar ul, nav,
 #div_body, .blog_image img, .blog_post_info, .blog_post_date, .blog_post_tittle, .blog_post_button,
-#log_form, #log_form_user {
+#log_form, #log_form_user, .blog_image img, .one_blog_image img,
+.one_blog_post_info, .one_blog_post_date, .one_blog_post_tittle, .one_blog_post_button, .one_blog_image_tittle, .one_blog_post_button form {
     width: 100%;
 }
 
-#header_navigation_bar, #div_container, #footer_bar {
+#header_navigation_bar, #div_container, #footer_bar, .one_blog_post_button input {
     width: 80%;
 }
 
 /* Height */
+.blog_image img, .one_blog_image img {
+    height: 100%;
+}
+
 header div {
     height: 50%;
 }
@@ -69,7 +78,7 @@ header div {
 /* Flex */
 header, header div, #header_navigation_bar ul, #div_body, footer, #footer_bar,
 #log_form, #log_form_user,
-.blog_post, .blog_post_button {
+.blog_post, .blog_post_button, .one_blog_image_tittle, .one_blog_post {
     display: flex;
 }
 
@@ -85,8 +94,25 @@ header, header div {
     justify-content: space-evenly;
 }
 
-header, #log_form, #log_form_user {
+header, #log_form, #log_form_user, .one_blog_post {
     flex-direction: column;
+}
+
+/* Padding */
+#div_container {
+    padding: 10rem 4rem 0 4rem;
+}
+
+.one_blog_post_button input, #login_logout_button, #new_article_button {
+    padding: 0.3rem 1rem;
+}
+
+.commentary_div, .one_blog_post_button, .one_blog_post_content {
+    padding: 0.5rem 0;
+}
+
+.commentary_content {
+    padding: 0.5rem 2rem;
 }
 
 /* Others */
@@ -99,12 +125,7 @@ header {
     list-style: none;
 }
 
-#div_container {
-    padding: 10rem 4rem 0 4rem;
-}
-
 #login_logout_button, #new_article_button {
-    padding: 0.2rem 1.5rem;
     position: absolute;
     right: 2%;
     top: 10%;
@@ -151,17 +172,13 @@ footer {
     width: 14rem;
 }
 
-.blog_image {
+.blog_image, .one_blog_image {
     width: 600px;
     height: 300px;
     border: solid #606060 1px;
 }
 
-.blog_image img {
-    height: 100%;
-}
-
-.blog_post {
+.blog_post, .one_blog_post {
     margin-bottom: 2rem;
     height: auto;
 }
@@ -178,6 +195,19 @@ footer {
 .blog_post_little_content {
     padding: 1rem 0;
     height: 65%;
+}
+
+.one_blog_post_info {
+    padding-left: 2rem;
+}
+
+.one_blog_post_button {
+    height: 15%;
+    justify-content: flex-end;
+}
+
+.commentary_div, .one_blog_post_button {
+    border-top: solid #333333 1px;
 }
 
 /* Hover */
@@ -197,24 +227,44 @@ footer {
 
 /* ERROR */
 #error_problem {
-    font-size: 1.5rem;
+    padding: 10px 10px;
+    border-radius: 20px;
+    color: #ffffff;
     font-weight: bold;
     top: 0;
+    left: 0;
     position: absolute;
-    height: 4rem;
+    height: auto;
     text-align: center;
+    animation-name: error_anim;
+    animation-fill-mode: both;
+    animation-duration: 6s;
 }
 
 .green {
-    color: green;
+    background-color: green;
 }
 
 .orange {
-    color: orange;
+    background-color: orange;
 }
 
 .red {
-    color: red;
+    background-color: red;
+}
+
+@keyframes error_anim {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 /* Responsive */
@@ -226,12 +276,37 @@ footer {
 }
 
 @media screen and (max-width: 750px){
-    .blog_post {
+    .blog_post, .one_blog_image_tittle {
         flex-direction: column;
+    }
+
+    header h1 {
+        padding-top: 4rem;
+        font-size: 1.5rem;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    header div:first-child {
+        height: 70%;
+    }
+
+    #header_navigation_bar {
+        height: 30%;
     }
 
     .blog_image {
         height: 50%;
+        width: 100%;
+    }
+
+    #div_container {
+        padding: 11rem 1rem 0 1rem;
+    }
+
+    .one_blog_image {
         width: 100%;
     }
 }
