@@ -12,7 +12,6 @@
     }
 
 ?>
-    <link rel="stylesheet" href="../View/Styles/all_blog_post.css">
 
             <div class="blog_post">
                 <div class="blog_image"><img src="https://loremflickr.com/1080/1080/nature" /></div>

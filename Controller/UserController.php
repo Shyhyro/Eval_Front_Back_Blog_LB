@@ -14,7 +14,7 @@ class UserController
         $state = $stmt->execute();
         if($state) {
             $userData = $stmt->fetch();
-            $user = new User($userData['id'], $userData['username'], $userData['password'], $userData['email'], $userData['role']);
+            $user = new User($userData['id'], $userData['username'], $userData['password'], $userData['email'], $userData['role_fk']);
         }
         else {
             $user = null;
@@ -33,7 +33,7 @@ class UserController
         $state = $stmt->execute();
         if($state) {
             $userData = $stmt->fetch();
-            $user = new User($userData['id'], $userData['username'], $userData['password'], $userData['email'], $userData['role']);
+            $user = new User($userData['id'], $userData['username'], $userData['password'], $userData['email'], $userData['role_fk']);
         }
         else {
             $user = null;

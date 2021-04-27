@@ -23,9 +23,13 @@
         </nav>
     </div>
     <?php
+
         if (isset($_SESSION['id'], $_SESSION['username'])){
-            echo "<button id='new_article_button'>Nouvel article</button>";
             echo "<button id='login_logout_button' onclick='document.location.href=". '"../logout.php"' . "'>Déconnexion</button>";
+
+            if ($_SESSION['role'] == 1) {
+                echo "<button id='new_article_button'>Nouvel article</button>";
+            }
 
         } else {
             echo "<button id='login_logout_button' onclick='document.location.href=". '"log.php"' . "'>Connexion</button>";

@@ -6,7 +6,7 @@ class User
     private ?string $username;
     private ?string $password;
     private ?string $email;
-    private ?string $role;
+    private ?int $role;
 
     /**
      * User constructor.
@@ -16,7 +16,7 @@ class User
      * @param string|null $email
      * @param string|null $role
      */
-    public function __construct(int $id = null, string $username = null, string $password = null, string $email = null, string $role = null)
+    public function __construct(int $id = null, string $username = null, string $password = null, string $email = null, int $role = null)
     {
         $this->id = $id;
         $this->username = $username;
@@ -96,7 +96,7 @@ class User
      * Return role
      * @return false|string|null
      */
-    public function getRole(): ?string
+    public function getRole(): ?int
     {
         return $this->role;
     }

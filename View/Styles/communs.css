@@ -32,11 +32,13 @@ header, footer {
 }
 
 /* Fonts */
-body, #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button, #log_form_user input, #log_form button {
+body, #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button,
+#log_form_user input, #log_form button {
     font-family: "Segoe Print", sans-serif;
 }
 
-#login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button, .send_commentary_button, #log_form, #log_form button {
+#login_logout_button, #new_article_button, #header_navigation_bar ul li, .read_more_button, .send_commentary_button,
+#log_form, #log_form button, .blog_post_info {
     font-size: 1rem;
 }
 
@@ -45,7 +47,9 @@ h1 {
 }
 
 /* Width */
-body, header, #header_navigation_bar ul, nav, #div_body, #log_form, #log_form_user {
+body, header, #header_navigation_bar ul, nav,
+#div_body, .blog_image img, .blog_post_info, .blog_post_date, .blog_post_tittle, .blog_post_button,
+#log_form, #log_form_user {
     width: 100%;
 }
 
@@ -58,12 +62,14 @@ header div {
     height: 50%;
 }
 
-#div_container {
-    height: 100%;
+.blog_post_date, .blog_post_tittle {
+    height: 10%;
 }
 
 /* Flex */
-header, header div, #header_navigation_bar ul, #div_body, footer, #footer_bar, #log_form, #log_form_user {
+header, header div, #header_navigation_bar ul, #div_body, footer, #footer_bar,
+#log_form, #log_form_user,
+.blog_post, .blog_post_button {
     display: flex;
 }
 
@@ -145,6 +151,35 @@ footer {
     width: 14rem;
 }
 
+.blog_image {
+    width: 600px;
+    height: 300px;
+    border: solid #606060 1px;
+}
+
+.blog_image img {
+    height: 100%;
+}
+
+.blog_post {
+    margin-bottom: 2rem;
+    height: auto;
+}
+
+.blog_post_info {
+    padding-left: 2rem;
+}
+
+.blog_post_button {
+    height: 15%;
+    justify-content: flex-end;
+}
+
+.blog_post_little_content {
+    padding: 1rem 0;
+    height: 65%;
+}
+
 /* Hover */
 #login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, .send_commentary_button:hover, #log_form button:hover {
     background-color: #606060;
@@ -180,4 +215,23 @@ footer {
 
 .red {
     color: red;
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px){
+    #div_container, #header_navigation_bar, #footer_bar {
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    .blog_post {
+        flex-direction: column;
+    }
+
+    .blog_image {
+        height: 50%;
+        width: 100%;
+    }
 }
