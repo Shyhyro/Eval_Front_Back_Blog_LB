@@ -18,7 +18,6 @@
             <ul>
                 <li onclick="document.location.href='index.php'">Blog</li>
                 <li>A propos</li>
-                <li>Contact</li>
             </ul>
         </nav>
     </div>
@@ -28,7 +27,7 @@
             echo "<button id='login_logout_button' onclick='document.location.href=". '"../logout.php"' . "'>Déconnexion</button>";
 
             if ($_SESSION['role'] == 1) {
-                echo "<button id='new_article_button'>Nouvel article</button>";
+                echo "<button id='new_article_button' onclick='document.location.href=". '"add_page.php"' ."'>Administration</button>";
             }
 
         } else {

@@ -4,7 +4,7 @@
     include "../View/Elements/header.php";
 
     if (isset($_SESSION['id'], $_SESSION['username'])) {
-        header("location: ./chat.php");
+        header("location:index.php");
     }
 
     if (isset($_GET['error'])) {

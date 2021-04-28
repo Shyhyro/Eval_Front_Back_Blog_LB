@@ -3,6 +3,10 @@
 
     include "../View/Elements/header.php";
 
+    if (isset($_SESSION['id'], $_SESSION['username'])) {
+        header("location:index.php");
+    }
+
     if (isset($_GET['welcome'])) {
         if ($_GET['welcome'] === '1') {
             echo '<div id="error_problem" class="green">Account validate!</div>';

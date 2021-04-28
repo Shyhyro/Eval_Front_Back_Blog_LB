@@ -21,6 +21,23 @@ class CategoryController {
         return $category;
     }
 
+    /**
+     * Get all category name in table category
+     */
+    public function getAllCategory(): ?array
+    {
+        $array = [];
+        $stmt = DB::getInstance()->prepare("SELECT * FROM category");
+
+        if($stmt->execute()) {
+            foreach ($stmt->fetchAll() as $category) {
+                $array[] = new Category($category['id'], $category['category']);
+            }
+
+        }
+        return $array;
+    }
+
     /*
      * Add a new category in table category
      */

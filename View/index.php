@@ -13,17 +13,18 @@
 
     $posts = new PostController();
     $posts = $posts->getPost();
+    $posts = array_reverse($posts);
 
     foreach ($posts as $post) {
         echo "
             <div class='blog_post'>" .
-                "<div class='blog_image'><img alt='image' src='https://loremflickr.com/1080/1080/nature'/></div>".
+                "<div class='blog_image'><img alt='image' src='" . $post->getImg() . "'/></div>".
                 "<div class='blog_post_info'>".
                     "<div class='blog_post_date'>". $post->getDate() . "/ in " . $post->getCategory() ."</div>".
                     "<div class='blog_post_tittle'><h3>". $post->getTittle() ."</h3></div>".
                     "<div class='blog_post_little_content'>". $post->getResume() ."</div>".
                     "<div class='blog_post_button'>".
-                        "<button class='read_more_button' onclick='document.location.href=". '"blog_post_php?id=' . $post->getId() . '"' ."'>Voir article</button>".
+                        "<button class='read_more_button' onclick='document.location.href=". '"blog_post.php?id=' . $post->getId() . '"' ."'>Voir article</button>".
                     "</div>".
                 "</div>".
             "</div>";

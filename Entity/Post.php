@@ -8,6 +8,7 @@ class Post
     private ?string $date;
     private ?string $resume;
     private ?string $content;
+    private ?string $img;
 
     /** post constructor.
      * @param int|null $id
@@ -16,8 +17,9 @@ class Post
      * @param string|null $date
      * @param string|null $resume
      * @param string|null $content
+     * @param string|null $img
      */
-    public function __construct(int $id = null, string $tittle = null, string $category_fk = null, string $date = null, string $resume = null, string $content =null)
+    public function __construct(int $id = null, string $tittle = null, string $category_fk = null, string $date = null, string $resume = null, string $content =null, string $img = null)
     {
         $this->id = $id;
         $this->tittle = $tittle;
@@ -25,6 +27,7 @@ class Post
         $this->date = $date;
         $this->resume = $resume;
         $this->content = $content;
+        $this->img = $img;
     }
 
     /* Get id of post */
@@ -84,6 +87,18 @@ class Post
     public function setContent($content): Post
     {
         $this->content = $content;
+        return $this;
+    }
+
+    /* Get & set resume of post */
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg($img): Post
+    {
+        $this->img = $img;
         return $this;
     }
 
