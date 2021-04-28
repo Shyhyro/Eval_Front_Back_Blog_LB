@@ -47,4 +47,5 @@ class CategoryController {
         return $stmt->execute();
     }
 
+
 }
