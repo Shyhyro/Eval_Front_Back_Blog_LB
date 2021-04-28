@@ -138,6 +138,10 @@ header {
     border-radius: 50px;
  }
 
+#div_container {
+    box-shadow: #606060 0 0 1rem;
+}
+
 #login_logout_button {
     right: 2%;
 }
@@ -147,7 +151,8 @@ header {
 }
 
 .read_more_button, .send_commentary_button, #log_form button {
-    border: solid #333333 1px;
+    border: unset;
+    border-radius: 50px 50px 0 50px;
     padding: 0.1rem 0.5rem;
 }
 
@@ -176,7 +181,10 @@ footer {
 .blog_image, .one_blog_image {
     width: 600px;
     height: 300px;
-    border: solid #606060 1px;
+}
+
+.blog_post {
+    background-color: rgba(198, 200, 201, 0.3);
 }
 
 .blog_post, .one_blog_post {
@@ -222,7 +230,6 @@ footer {
 /* Hover */
 #login_logout_button:hover, #new_article_button:hover, .read_more_button:hover, .send_commentary_button:hover, #log_form button:hover {
     background-color: #606060;
-    border: solid #ffffff 1px;
     color: #ffffff;
 }
 

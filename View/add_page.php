@@ -7,11 +7,11 @@ if ($_SESSION['role'] == 1) {
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] === '1') {
-            echo "<div id='error_problem' class='orange'>Catégorie ajouter!</div>";
+            echo "<div id='error_problem' class='green'>Catégorie ajouter!</div>";
         } else if ($_GET['error'] === '2') {
             echo '<div id="error_problem" class="red">Un problème est survenu!</div>';
         } else if ($_GET['error'] === '3') {
-            echo '<div id="error_problem" class="red">Article publier!</div>';
+            echo '<div id="error_problem" class="green">Article publier!</div>';
         }
     }
 

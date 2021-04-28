@@ -5,6 +5,7 @@
     <title>Mon petit Blog simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../View/Styles/communs.css">
+    <script src="https://kit.fontawesome.com/f8e4a7ab95.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,7 +34,6 @@
         } else {
             echo "<button id='login_logout_button' onclick='document.location.href=". '"log.php"' . "'>Connexion</button>";
         }
-
 
     ?>
 </header>

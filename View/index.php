@@ -11,6 +11,14 @@
         }
     }
 
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] === '1') {
+            echo "<div id='error_problem' class='orange'>Article supprimer!</div>";
+        } else if ($_GET['error'] === '2') {
+            echo '<div id="error_problem" class="red">Un problème est survenu!</div>';
+        }
+    }
+
     $posts = new PostController();
     $posts = $posts->getPost();
     $posts = array_reverse($posts);

@@ -43,4 +43,41 @@ class PostController
         return $stmt->execute();
     }
 
+    /*
+     * Update a Post in table post
+     */
+    public function updatePost($id, $tittle, $category_fk, $resume, $content, $img) :bool
+    {
+        $stmt = DB::getInstance()->prepare("UPDATE post SET tittle='$tittle', category_fk='$category_fk', resume='$resume', content='$content', img='$img' WHERE id = '$id'");
+        return $stmt->execute();
+    }
+
+    /*
+     * Delete a Post in table post
+     */
+    public function deletePost($id) :bool
+    {
+        $stmt = DB::getInstance()->prepare("DELETE FROM post WHERE id = '$id'");
+        return $stmt->execute();
+    }
+
+    /**
+     * Search a post in table post
+     * @param $id
+     * @return Post
+     */
+    public function searchPost($id): ?Post
+    {
+        $stmt = DB::getInstance()->prepare("SELECT * FROM post  WHERE id = '$id' LIMIT 1");
+        $state = $stmt->execute();
+        if($state) {
+            $postData = $stmt->fetch();
+            $post = new Post($postData['id']);
+        }
+        else {
+            $post = null;
+        }
+        return $post;
+    }
+
 }
