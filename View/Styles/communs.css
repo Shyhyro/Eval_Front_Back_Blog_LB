@@ -10,7 +10,7 @@ body {
 
 /* Colors */
 body, .read_more_button, .send_commentary_button {
-    background-color: #889aba;
+    background-color: #C3B7D2;
 }
 
 #login_logout_button, #new_article_button, .read_more_button, .send_commentary_button {

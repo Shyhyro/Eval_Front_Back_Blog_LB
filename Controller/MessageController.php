@@ -21,4 +21,22 @@ class MessageController{
         return $array;
     }
 
+    /*
+     * Add a new message for post in table commentary
+     */
+    public function addMessage($user_fk, $message, $post_fk) :bool
+    {
+        $stmt = DB::getInstance()->prepare("INSERT INTO commentary (user_fk, content, post_fk) VALUES ('$user_fk', '$message', '$post_fk')");
+        return $stmt->execute();
+    }
+
+    /*
+     * Delete a message for post in table commentary
+     */
+    public function deleteMessage($id) :bool
+    {
+        $stmt = DB::getInstance()->prepare("DELETE FROM commentary  WHERE id = '$id'");
+        return $stmt->execute();
+    }
+
 }

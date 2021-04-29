@@ -13,6 +13,10 @@
                     echo "<div id='error_problem' class='green'>Article modifier!</div>";
                 } else if ($_GET['error'] === '2') {
                     echo '<div id="error_problem" class="red">Un problème est survenu!</div>';
+                } else if ($_GET['error'] === '3') {
+                    echo '<div id="error_problem" class="green">Commentaire envoyer!</div>';
+                }else if ($_GET['error'] === '4') {
+                    echo '<div id="error_problem" class="green">Commentaire supprimer!</div>';
                 }
             }
         }
@@ -36,12 +40,12 @@
                     <div class='one_blog_post_button'>
                 <?php
                     if (isset ($_SESSION['username'], $_SESSION['id'])){
-                        echo "
-                        <form method='post' name='add_commentary'>
-                            <input type='text'>
+                ?>
+                        <form method='post' name='add_commentary' action="../new_commentary.php?error=0&id=<?php echo $_GET['id'] ?>">
+                            <input type='text' name="commentary">
                             <button type='submit' class='send_commentary_button'>Envoyer</button>
                         </form>
-                    ";
+                <?php
                     }
                 ?>
                     </div>
@@ -54,11 +58,19 @@
 
                         foreach ($all_message as $message) {
                             $user = new UserController();
-                            $user = $user->searchUser($message->getUser());
-                            echo "<div class='commentary_div'>
-                                    <div>" . $user->getUsername() . "</div>
-                                    <div class='commentary_content'>". $message->getContent() ."</div>
-                                </div>";
+                            $user = $user->searchUser($message->getUser()); ?>
+                                <div class='commentary_div'>
+                                    <?php
+                                    if ($_SESSION['role'] == 1 ){
+                                        echo "<button class='option_button read_more_button red' onclick='document.location.href=".
+                                            '"../commentary_delete.php?error=0&id=' . $_GET['id'] . '&idcomment='. $message->getId() .'"' .
+                                            "'>Supprimer <i class='fas fa-times'></i></button>";
+                                    }
+                                    ?>
+                                    <div> <?=$user->getUsername()?></div>
+                                    <div class='commentary_content'><?=$message->getContent()?></div>
+                                </div>
+                    <?php
                         }
                     ?>
                 </div>
