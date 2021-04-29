@@ -61,10 +61,12 @@
                             $user = $user->searchUser($message->getUser()); ?>
                                 <div class='commentary_div'>
                                     <?php
-                                    if ($_SESSION['role'] == 1 ){
-                                        echo "<button class='option_button read_more_button red' onclick='document.location.href=".
-                                            '"../commentary_delete.php?error=0&id=' . $_GET['id'] . '&idcomment='. $message->getId() .'"' .
-                                            "'>Supprimer <i class='fas fa-times'></i></button>";
+                                    if (isset($_SESSION['role'])){
+                                        if ($_SESSION['role'] == 1 ) {
+                                            echo "<button class='option_button read_more_button red' onclick='document.location.href=".
+                                                '"../commentary_delete.php?error=0&id=' . $_GET['id'] . '&idcomment='. $message->getId() .'"' .
+                                                "'>Supprimer <i class='fas fa-times'></i></button>";
+                                        }
                                     }
                                     ?>
                                     <div> <?=$user->getUsername()?></div>
